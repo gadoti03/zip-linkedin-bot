@@ -25,7 +25,7 @@ def main():
     wait_a_press()
 
     # go to game
-    driver.go_to_page(url_game, 1)
+    driver.go_to_page(url_game, 2)
 
     # get grid
     grid, barriers = parser(driver.page.content())
