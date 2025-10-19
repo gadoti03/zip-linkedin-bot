@@ -3,7 +3,8 @@
 ## Description
 This project automates the LinkedIn Zip game. It navigates through the game page and performs actions automatically based on the starting pointer. 
 
-⚠️ Important: The automation assumes the initial pointer is set to `1`. If previous attempts have been made manually, the pointer might have a different value, causing incorrect behavior.
+⚠️ **Important:** The automation assumes the initial pointer is set to `1`.  
+If previous attempts have been made manually, the pointer might have a different value, causing incorrect behavior.
 
 ## Requirements
 - Python 3.10+
@@ -17,33 +18,65 @@ requests
 ```
 
 ## Setup
-1. Clone the repository:
+
+1. **Clone the repository**
 ```bash
 git clone <your-repo-url>
 cd <project-folder>
 ```
-2. Create a virtual environment:
+
+2. **Create a virtual environment**
 ```bash
 python -m venv venv
 source venv/bin/activate   # Linux/Mac
 venv\Scripts\activate      # Windows
 ```
-3. Install dependencies:
+
+3. **Install dependencies**
 ```bash
 pip install -r requirements.txt
 ```
 
+4. **(Optional) Install Playwright browsers**
+If your project uses Playwright for browser automation, install the browser binaries:
+```bash
+playwright install
+```
+
+---
+
 ## Usage
-1. Run the script:
+
+1. **Run the script**
 ```bash
 python main.py
 ```
-2. The browser will open and navigate to the LinkedIn Zip game login page.
-3. Log in with your LinkedIn credentials.
-4. Once logged in, return to the terminal and press `<Enter>` to start the automation.
+
+2. **Optional:** You can also provide username and password directly as arguments:
+```bash
+python main.py <username> <password>
+```
+
+3. The browser will open and navigate to the LinkedIn Zip game login page.
+
+4. **Log in with your LinkedIn credentials** (if not provided as arguments).
+
+5. Once logged in, return to the terminal and press `<Enter>` to start the automation.
 
 The automation will now play the game automatically.
 
+---
+
 ## Disclaimer
 - Make sure the starting pointer in the game is at `1` before running the automation.
-- Using automation on platforms like LinkedIn may violate their terms of service. Use this project responsibly and at your own risk.
+- Using automation on platforms like LinkedIn may violate their terms of service.  
+  Use this project responsibly and at your own risk.
+
+---
+
+## Notes
+If you reinstall the environment or update your dependencies, remember to re-run:
+```bash
+playwright install
+```
+to ensure Playwright has its required browsers installed.
