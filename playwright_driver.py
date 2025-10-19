@@ -49,7 +49,7 @@ class PlaywrightDriver:
         print("strating performing")
         # click on the page
         self.page.mouse.click(100, 200)
-        path = path[:-1] # keep the last move
+        # path = path[:-1] # keep the last move for testing
         for move in path:
             if move == "right":
                 self.page.keyboard.press("ArrowRight")

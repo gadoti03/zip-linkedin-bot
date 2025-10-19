@@ -40,13 +40,13 @@ def get_starting_coords(grid):
                 if grid[i][j] == 1:
                     return i, j
 
-def get_neighbors(i, j, n_rows, n_cols, visited):
+def get_neighbors(i, j, n_rows, n_cols, visited, banned_path):
     directions = [(-1,0), (1,0), (0,-1), (0,1)] 
     neighbors = []
 
     for di, dj in directions:
         ni, nj = i + di, j + dj
-        if 0 <= ni < n_rows and 0 <= nj < n_cols and (ni,nj) not in visited:
+        if 0 <= ni < n_rows and 0 <= nj < n_cols and (ni,nj) not in visited and ((i,j), (ni, nj)) not in banned_path:
             neighbors.append((ni, nj))
     
     return neighbors
@@ -67,7 +67,7 @@ def get_moves(path):
             moves.append("up")
     return moves
 
-def solve(grid):
+def solve(grid, banned_path):
     n_rows = len(grid)
     n_cols = len(grid[0])
 
@@ -92,7 +92,7 @@ def solve(grid):
         elif len(read_numbers) == n_numbers:
             return False
 
-        for mov in get_neighbors(i, j, n_rows, n_cols, visited_cells):
+        for mov in get_neighbors(i, j, n_rows, n_cols, visited_cells, banned_path):
             visited_cells.add(mov)
             val = grid[mov[0]][mov[1]]
             added_number = False

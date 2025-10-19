@@ -3,6 +3,8 @@ from solver import solve
 from grid_parser import parser
 from utils import wait_a_press, check_arguments
 import sys, tty, termios, getpass
+import pprint
+import time
 
 def main():
     url_game = "https://www.linkedin.com/games/zip/"
@@ -26,18 +28,19 @@ def main():
     driver.go_to_page(url_game, 1)
 
     # get grid
-    grid = parser(driver.page.content())
-    print("Grid read:", grid)
+    grid, barriers = parser(driver.page.content())
 
     # compute the path
-    path = solve(grid)
+    path = solve(grid, barriers)
     print("Path computed:", path)
 
     # execute moves
     driver.perform_moves(path)
 
+    time.sleep(100)
+
     # close browser
-    driver.close_browser()
+    # driver.close_browser()
 
 if __name__ == "__main__":
     main()
