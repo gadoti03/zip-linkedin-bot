@@ -32,7 +32,7 @@ def main():
     # print(grid, barriers)
 
     # compute the path
-    path = solve(grid, barriers)[:-1]
+    path = solve(grid, barriers)
     # print("Path computed:", path)
 
     # execute moves
