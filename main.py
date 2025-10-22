@@ -29,10 +29,11 @@ def main():
 
     # get grid
     grid, barriers = parser(driver.page.content())
+    # print(grid, barriers)
 
     # compute the path
-    path = solve(grid, barriers)
-    print("Path computed:", path)
+    path = solve(grid, barriers)[:-1]
+    # print("Path computed:", path)
 
     # execute moves
     driver.perform_moves(path)

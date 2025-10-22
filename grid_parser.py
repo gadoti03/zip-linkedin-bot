@@ -5,7 +5,7 @@ def parser(html_content):
     soup = BeautifulSoup(html_content, "html.parser")
 
     # Find the main div with class "trail-grid"
-    trail_grid = soup.find("div", class_="_44acb0dc _37345ed1 e32929ae bd361404 _868cc137 _9ebc6d94 _68f868a4")
+    trail_grid = soup.find_all("div", dir="ltr")[-1]
 
     # Extract grid dimensions
     style_content = trail_grid.get("style").strip().split()
