@@ -29,7 +29,9 @@ def main():
 
     # get grid
     grid, barriers = parser(driver.page.content())
-    # print(grid, barriers)
+    print("Grid and Barriers:", )
+    print("Grid:", grid)
+    print("Barriers:", barriers)
 
     # compute the path
     path = solve(grid, barriers)

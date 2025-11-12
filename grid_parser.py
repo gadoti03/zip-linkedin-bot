@@ -21,6 +21,7 @@ def parser(html_content):
     trail_cells = soup.find_all("div", attrs={"data-cell-idx": True})
 
     for cell in trail_cells:
+        print(cell)
         # Read the data-cell-idx attribute (position of the cell)
         cell_idx = int(cell.get("data-cell-idx"))
         
@@ -53,3 +54,6 @@ def parser(html_content):
             barriers[(((cell_idx // n) + 1, cell_idx % n),(cell_idx // n, cell_idx % n))]
     
     return grid, barriers
+
+# nuova strategia:
+# 1) escludo i div figli con attributo data-cell-content
