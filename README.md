@@ -12,12 +12,9 @@ If previous attempts have been made manually, the pointer might have a different
 
 A sample recording of the automation is available:
 
-`screencast.mp4`
+![Demo of the automation](screencast.gif)
 
-You can open it with:
-```bash
-vlc screencast.mp4
-```
+> The GIF above shows the automation in action.
 
 ## Requirements
 - Python 3.10+
