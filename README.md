@@ -12,7 +12,7 @@ If previous attempts have been made manually, the pointer might have a different
 
 A sample recording of the automation is available:
 
-![Demo of the automation](output.gif)
+![Demo of the automation](screencast.gif)
 
 > The GIF above shows the automation in action.
 
