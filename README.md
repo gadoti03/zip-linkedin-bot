@@ -6,6 +6,19 @@ This project automates the LinkedIn Zip game. It navigates through the game page
 ⚠️ **Important:** The automation assumes the initial pointer is set to `1`.  
 If previous attempts have been made manually, the pointer might have a different value, causing incorrect behavior.
 
+---
+
+## Demo
+
+A sample recording of the automation is available:
+
+`screencast.mp4`
+
+You can open it with:
+```bash
+vlc screencast.mp4
+```
+
 ## Requirements
 - Python 3.10+
 - Packages listed in `requirements.txt`
